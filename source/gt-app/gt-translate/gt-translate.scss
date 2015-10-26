@@ -1,0 +1,26 @@
+gt-translate {
+  display: block;
+
+  fieldset {
+    border: none;
+  }
+
+  .translation {
+    background-color: rgb(238, 238, 238);
+
+    > md-progress-circular {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      margin-left: -50px;
+      margin-top: -50px;
+    }
+  }
+
+  .detection {
+    > small {
+      background-color: rgb(255, 255, 153);
+    }
+  }
+}

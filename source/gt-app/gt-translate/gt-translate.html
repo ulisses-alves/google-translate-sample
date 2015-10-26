@@ -1,0 +1,28 @@
+<form>
+  <fieldset ng-disabled="!ready">
+    <div layout="row" layout-wrap>
+      <md-input-container flex="50" layout-padding>
+        <label>Text</label>
+        <textarea rows="6" ng-model="model.text"></textarea>
+      </md-input-container>
+      <div flex="50" layout="column" layout-padding>
+        <md-content flex class="translation">
+          <md-progress-circular ng-if="!ready"></md-progress-circular>
+          <p>{{ model.translation.translatedText }}</p>
+        </div>
+      </md-content>
+      <div flex="100" layout="row"
+        layout-align="space-between center" layout-padding>
+        <div class="detection">
+          <small ng-if="model.detection" layout-padding>
+            Detected language [<strong>{{ model.detection.language }}</strong>],
+            Condidence [<strong>{{ model.detection.confidence }}</strong>],
+            Reliable [<strong>{{ model.detection.isReliable }}</strong>]
+          </small>
+        </div>
+        <md-button class="md-raised md-primary"
+          ng-click="submit()">Translate</md-button>
+      </div>
+    </div>
+  </fieldset>
+</form>
